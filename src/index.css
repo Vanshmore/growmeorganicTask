@@ -1,0 +1,98 @@
+/* src/index.css */
+@import 'primereact/resources/themes/lara-light-indigo/theme.css';
+@import 'primereact/resources/primereact.css';
+@import 'primeicons/primeicons.css';
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.card {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.14), 0 1px 3px 0 rgba(0,0,0,0.12);
+}
+
+.selection-summary {
+  background-color: #2196F3;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+/* Add to src/index.css */
+.rows-selector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #f8f9fa;
+}
+
+.p-input-icon-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.p-inputtext {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+}
+
+.p-button {
+  padding: 0.5rem 1rem;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.p-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.p-overlaypanel {
+  min-width: 200px;
+}
+
+.p-overlaypanel .p-inputtext {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.p-button-text.p-button-sm {
+  padding: 0.25rem;
+}
+
+.p-button-text.p-button-sm:hover {
+  background-color: #e9ecef;
+}
