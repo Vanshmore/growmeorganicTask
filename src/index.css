@@ -43,14 +43,6 @@ body {
   border: 1px solid #ced4da;
 }
 
-.p-button {
-  padding: 0.5rem 1rem;
-  background-color: #2196F3;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
 
 .p-button:disabled {
   background-color: #ccc;
@@ -95,4 +87,4 @@ body {
 
 .p-button-text.p-button-sm:hover {
   background-color: #e9ecef;
-}
+} 
