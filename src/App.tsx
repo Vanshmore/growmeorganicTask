@@ -59,30 +59,34 @@ const App = () => {
     fetchArtworks(page, event.rows);
   };
 
-  const handleRowsSubmit = async () => {
+const handleRowsSubmit = async () => {
     const numRows = parseInt(rowsInput);
-
+  
     if (!isNaN(numRows) && numRows > 0) {
       let allRows: Artwork[] = [];
       let currentPage = 1;
-
+      const rowsPerFetch = 12; 
+  
       try {
+
         while (allRows.length < numRows) {
           const response = await fetch(
-            `https://api.artic.edu/api/v1/artworks?page=${currentPage}`
+            `https://api.artic.edu/api/v1/artworks?page=${currentPage}&limit=${rowsPerFetch}`
           );
           const data: APIResponse = await response.json();
+          
+          if (!data.data.length) break; 
+          
           allRows = [...allRows, ...data.data];
           currentPage++;
-
-          if (data.pagination.offset + data.pagination.limit >= data.pagination.total) {
-            break;
-          }
         }
-
+  
+        
         const selectedRows = allRows.slice(0, numRows);
         setSelectedRows(selectedRows);
-        setArtworks(allRows.slice(0, 12));
+        
+        
+        setArtworks(allRows.slice(0, rowsPerPage));
         setTotalRecords(allRows.length);
         setRowsInput('');
         op.current?.hide();
@@ -90,7 +94,7 @@ const App = () => {
         console.error('Error fetching rows across pages:', error);
       }
     }
-  };
+ };
 
   const TitleHeader = () => (
     <div className="flex align-items-center">
